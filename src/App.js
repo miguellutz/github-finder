@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import Navbar from './components/layout/Navbar';
+import Users from './components/users/Users';
 import './App.css';
 
 class App extends Component {
   render() {
-    const name = 'John Doe';
-    const loading = false;
-    const showName = true;
     // return React.createElement('div', { className: 'App' }, React.createElement('h1', null, 'Hello from React')
     // );
     return (
-      <div className="App">
-        {loading ? <h4>Loading...</h4> : <h1>Hello {showName && name}</h1>}
+      <div className='App'>
+        <Navbar />
+        <div className="container">
+          <Users />
+        </div>
       </div>
     );
   }
