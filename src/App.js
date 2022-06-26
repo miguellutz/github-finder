@@ -38,12 +38,18 @@ class App extends Component {
   render() {
     // return React.createElement('div', { className: 'App' }, React.createElement('h1', null, 'Hello from React')
     // );
+    const { users, loading } = this.state;
+
     return (
       <div className='App'>
         <Navbar />
         <div className="container">
-          <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} />
-          <Users loading={this.state.loading} users={this.state.users} />
+          <Search
+            searchUsers={this.searchUsers}
+            clearUsers={this.clearUsers}
+            showClear={ users.length > 0 ? true : false}
+          />
+          <Users loading={loading} users={users} />
         </div>
       </div>
     );
